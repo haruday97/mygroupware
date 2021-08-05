@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+
+<definition name="login.tiles" template="/WEB-INF/views/layouts-tiles.jsp">
+	<put-attribute name="header" value="/WEB-INF/views/commons/header.jsp"/>
+	<put-attribute name="top_inc" value="/WEB-INF/views/commons/top_inc.jsp"/>
+	<put-attribute name="top_menu" value="/WEB-INF/views/commons/top_menu.jsp"/>
+	<put-attribute name="left_menu" value="/WEB-INF/views/hansul_main/main_leftMenu.jsp"/>
+	<put-attribute name="main" value="/WEB-INF/views/hansul_main/login.jsp"/>
+	<put-attribute name="bottom_inc" value="/WEB-INF/views/commons/bottom_inc.jsp"/>
+</definition>
+
+
+
+<!-- 이한슬 -->
+	<definition name="realMain.tiles" extends="login.tiles">
+		<put-attribute name="main" value="/WEB-INF/views/hansul_main/realMain.jsp"/>
+	</definition>
+	
+	<definition name="formtest.tiles" extends="login.tiles">
+		<put-attribute name="main" value="/WEB-INF/views/hansul_main/formtest.jsp"/>
+	</definition>
+	
+	<definition name="docuMyList.tiles" extends="login.tiles">
+		<put-attribute name="main" value="/WEB-INF/views/hansul/docuMyList.jsp"/>
+	</definition>
+	
+	<definition name="docuMyProcess.tiles" extends="login.tiles">
+		<put-attribute name="main" value="/WEB-INF/views/hansul/docuMyProcess.jsp"/>
+	</definition>
+
+<!-- 김계림 -->
+	<definition name="noticelist.tiles" extends="login.tiles">
+	   <put-attribute name="main" value="/WEB-INF/views/gyerim_notice/noticelist.jsp"/>
+	</definition>
+	
+	<definition name="noticewrite.tiles" extends="login.tiles">
+	   <put-attribute name="main" value="/WEB-INF/views/gyerim_notice/noticewrite.jsp"/>
+	</definition>
+	
+	<definition name="noticedetail.tiles" extends="login.tiles">
+	   <put-attribute name="main" value="/WEB-INF/views/gyerim_notice/noticedetail.jsp"/>
+	</definition>
+	
+	<definition name="noticeupdate.tiles" extends="noticelist.tiles">
+	   <put-attribute name="main" value="/WEB-INF/views/gyerim_notice/noticeupdate.jsp"/>
+	</definition>
+
+<!-- 이하루 -->
+<definition name="admin.tiles" extends="login.tiles">
+	<put-attribute name="left_menu" value="/WEB-INF/views/admin/admin_leftMenu.jsp"/>
+</definition>
+
+<definition name="adminCompany.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_company.jsp"/>
+</definition>
+
+<definition name="adminCompanyDetail.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_company_detail.jsp"/>
+</definition>
+
+<definition name="adminCompanyModify.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_company_modify.jsp"/>
+</definition>
+
+<definition name="adminCompanyAdd.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_company_add.jsp"/>
+</definition>
+
+<definition name="adminAuthority.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_authority.jsp"/>
+</definition>
+
+<definition name="adminDepartment.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_department.jsp"/>
+</definition>
+
+<definition name="adminJob.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_job.jsp"/>
+</definition>
+
+<definition name="adminUser.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_user.jsp"/>
+</definition>
+
+<definition name="adminWorkplace.tiles" extends="admin.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/admin/admin_workplace.jsp"/>
+</definition>
+
+</tiles-definitions>
+
+
+
+
+
+
+
+
+    

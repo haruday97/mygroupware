@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="Notice">
+
+<select id="getNoticeList" resultType="bit.com.a.dto.NoticeDto">
+	SELECT SEQ, USERNO, USERNAME, CATEGORY, TITLE, CONTENT, CREATEDATE, UPDATEDATE, 
+		FILENAME, NEWFILENAME, READCOUNT, READCHECK, IMT, DEL
+		FROM NOTICE
+	ORDER BY SEQ DESC
+</select>
+
+<insert id="writeNotice" parameterType="bit.com.a.dto.NoticeDto">
+	INSERT INTO NOTICE(SEQ, USERNO, USERNAME, CATEGORY, TITLE, CONTENT, FILENAME, NEWFILENAME,
+						CREATEDATE, UPDATEDATE, READCOUNT, READCHECK, IMT, DEL)
+	VALUES(SEQ_NOTICE.NEXTVAL, 0, #{username}, #{category}, #{title}, #{content}, #{filename}, #{newfilename}, 
+					SYSDATE, SYSDATE, 0, 0, 0, 0)
+</insert>
+
+<select id="getNotice" parameterType="java.lang.Integer"
+	resultType="bit.com.a.dto.NoticeDto">
+	SELECT SEQ, USERNO, USERNAME, CATEGORY, TITLE, CONTENT, FILENAME, NEWFILENAME,
+		CREATEDATE, UPDATEDATE, READCOUNT, READCHECK, IMT, DEL
+	FROM NOTICE
+	WHERE SEQ=#{seq}
+</select>
+
+<update id="updatenotice" parameterType="bit.com.a.dto.NoticeDto">
+	UPDATE NOTICE
+	SET TITLE=#{title}, CONTENT=#{content}, FILENAME=#{filename}
+	WHERE SEQ=#{seq}
+</update>
+
+<update id="readcount" parameterType="java.lang.Integer">
+	UPDATE NOTICE
+	SET READCOUNT=READCOUNT+1
+	WHERE SEQ = #{seq}
+</update>
+
+</mapper>  
+
+
+
+
+
+
